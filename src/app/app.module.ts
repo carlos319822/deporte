@@ -10,6 +10,9 @@ import { APP_ROUTING } from './app.routes';
 import { HomeComponent } from './pages/home/home.component';
 import { TemporadaComponent } from './pages/temporada/temporada.component';
 
+
+import { TemporadaService } from './servicios/temporada.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +27,9 @@ import { TemporadaComponent } from './pages/temporada/temporada.component';
     APP_ROUTING
   ],
   providers: [
-    EquiposService
+    EquiposService,
+    TemporadaService,
+    
   ],
   bootstrap: [AppComponent]
 })

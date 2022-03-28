@@ -12,6 +12,9 @@ import { TemporadaComponent } from './pages/temporada/temporada.component';
 
 
 import { TemporadaService } from './servicios/temporada.service';
+import { SpinnerComponent } from './shared/spinner/spinner.component';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { SpinnerInterceptor } from './shared/spinner/spinner.interceptor';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,8 @@ import { TemporadaService } from './servicios/temporada.service';
     HeaderComponent,
     EquiposComponent,
     HomeComponent,
-    TemporadaComponent
+    TemporadaComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +33,9 @@ import { TemporadaService } from './servicios/temporada.service';
   providers: [
     EquiposService,
     TemporadaService,
-    
+    {
+      provide: HTTP_INTERCEPTORS, useClass: SpinnerInterceptor, multi:true
+    },
   ],
   bootstrap: [AppComponent]
 })

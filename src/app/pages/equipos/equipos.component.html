@@ -1,0 +1,25 @@
+<h1>Equipos Sur Americanos</h1>
+<h5>Equipos de la CAN</h5>
+
+
+<div class="card-columns">
+    <div class="card" *ngFor="let equipo of equipos">
+        <img class="card-img-top" [src]="equipo.img" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">{{equipo.nombre}}</h5>
+
+            <h1 class="card-title">{{equipo.federacion}} </h1>
+
+            <p class="card-text ">{{equipo.bio}}</p>
+
+            <h1 class="card-title">{{equipo.entrenador}} </h1>
+            <h1 class="card-title">{{equipo.capitan}} </h1>
+
+            <p class="card-text ">
+                <small class="text-muted ">{{equipo.estadio}} </small>
+                <br>
+                <a class="btn btn-primary btn-lg" href="{{equipo.oficial}}" role="button">ver mas
+  </a>
+            </p>
+        </div>
+    </div>

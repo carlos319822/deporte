@@ -1,0 +1,15 @@
+<div class="row row-cols-1 row-cols-md-2 g-4">
+    <div class="col">
+        <div class="card" *ngFor="let temporada of temporadas">
+            <img [src]="temporada.img" class="card-img-top" alt="">
+            <div class="card-body">
+                <h5 class="card-title">{{temporada.nombre}}</h5>
+                <p class="card-text">{{temporada.des}}</p>
+                <a class="btn btn-primary btn-lg" href="{{temporada.temp}}" role="button">ver mas
+                </a>
+
+            </div>
+        </div>
+    </div>
+
+</div>
